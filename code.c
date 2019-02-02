@@ -1,8 +1,15 @@
-
-
 #include <stdio.h> 
-int main() 
+int main(void) 
 { 
-// Prints location of C this C code. 
-printf("%s",__FILE__); 
+	char c; 
+	int a=10;
+	FILE *fp = fopen(__FILE__, "r");
+	do
+	{ 
+        c = fgetc(fp);   
+		putchar(c);
+	} 
+	while (c != EOF); 
+	fclose(fp); 
+    return 0; 
 } 
